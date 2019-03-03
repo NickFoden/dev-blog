@@ -1,12 +1,9 @@
 import React from "react";
 import styles from "./Bio.module.css";
-import { getGravatarURL } from "../utils/getGravatarURL";
+import fodenCrest from "../assets/foden-arms.gif";
 
 function Bio(props) {
-  let photoURL = getGravatarURL({
-    email: "nickfoden@gmail.com",
-    size: 56
-  });
+  const photoURL = fodenCrest;
 
   return (
     <div
