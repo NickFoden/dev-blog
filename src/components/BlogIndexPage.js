@@ -42,7 +42,16 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
             href="https://github.com/NickFoden/dev-blog"
           >
             Source
+          </a>{" "}
+          &bull;
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://tinyletter.com/FodenDev"
+          >
+            Subscribe
           </a>
+          {/* <Link href="./tiny-letter">Subscribe</Link> */}
         </div>
       </footer>
     </div>
