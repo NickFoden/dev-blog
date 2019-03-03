@@ -56,7 +56,7 @@ unloadUpdate = e => {
   //create a form object formObj here from state and update the db record
   projectRef
     .child(projectId)
-    .update( formObj)
+    .update(formObj)
     .then(console.log("Saved your draft you lucky duck. . . but this wont show up anywhere"))
     .catch((error) => {
       console.log("You'll never get a console log since you/they are closing the browser " + error.code);
