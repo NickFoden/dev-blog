@@ -1,0 +1,71 @@
+import styles from './document.module.css'
+import fbcosts from "./fbcosts.png"
+import bleedMyOwnBlood from "./bleedMyOwnBlood.gif"
+
+<div className={styles["Document"]}>
+
+
+## Firebase billed me my own $ for February ?!
+<img src={bleedMyOwnBlood} alt="Dodgeball ben stiller no one makes me bleed my own blood gif" />
+
+While $0.30 is a small amount of money so not too upsetting, 
+
+<img src={fbcosts} alt="screen shot of firebase console costs"/>
+
+this should not have happened yet since we are 
+still in development, and increased the priority of fixing some technical debt/a larger issue with my form component. 
+_(Also a good reminder to get the boss' credit card in place . .)_
+
+This project is on a Blaze Plan so we can run backups of the real time database, 
+but the free tier has to be surpassed before any charges are inccured.
+
+## So how did we blow through our outgoing bandwith allowance on firebase's free tier?
+
+The project requirement for the form component I was building outlined 
+that if a user leaves the page that we don't lose all of their 
+inputs so they can come back later and pick up the draft where they left off. 
+I had wired it to update firebase when it updated state, easy, simple and worked well. 
+You can probably see where this is going.
+This was shortsighted at best, since a database call on every key 
+stroke was bound to add up. Having used firebase on multiple platforms with many many users, I 
+chalked this temporary(read crappy) solution as fine since having enough users to hit the limits of the
+free tier would be a "high class problem".
+
+Not totally naive to this future/pending issue I was creating, I had taken stab at a `componentWillUnmount()`
+solution, but this doesn't fire if a user closes the browser and so 
+had abandoned that pursuit and in interest of shipping and picking up another story, I wired it up 
+the aforementioned ineffcient wrong way and off we went. 
+
+Taking some time to work this weekend(No I don't work at Revolut (zing)), I came up with a better/will be much cheaper
+solution for the form component. 
+
+Using the <a href="https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload" target="_blank" rel="noopener noreferrer">beforeunload</a> event
+
+_Note:_ I am using this `beforeunload` without `event.returnValue = ''` so there is no confirm close 
+dialogue for user to click "leave" or "close" etc
+
+```javascript
+componentDidMount() {
+ window.addEventListener("beforeunload", e => this.unloadUpdate(e));
+}
+
+
+unloadUpdate = e => {
+  e.preventDefault();
+  //Pseudo code starting here will need db ref and project state etc 
+  //create a form object formObj here from state and update the db record
+  projectRef
+    .child(projectId)
+    .update( formObj)
+    .then(console.log("Saved your draft you lucky duck. . . but this wont show up anywhere"))
+    .catch((error) => {
+      console.log("You'll never get a console log since you/they are closing the browser " + error.code);
+    });
+};
+```
+
+Love it? Hate it? <a href="https://nef.dev/tweet" target="_blank" rel="noopener noreferrer" >Holler at me</a>
+
+-- Nick
+
+</div>
