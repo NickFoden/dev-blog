@@ -1,25 +1,46 @@
-.Document img {
-  width: 400px;
-}
-
-.image_container a {
-  color: red;
-}
-
 .image_container {
+  justify-content: center;
   display: flex;
-  width: 80vw;
+  flex-direction: column;
+  width: 100%;
 }
 
-.image_norway {}
+.image_norway {
+  margin: 0 auto;
+  width: 100%;
+}
 
 .image_container a {
-  justify-content: center;
   margin: 0 auto;
 }
-/* @media only screen and (max-width: 600px) {
-  .image_container {
-    display: flex;
-    width: 500px;
-  }
-} */
+
+a {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 4px 6px;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.span {
+  display: inline-block;
+  padding: 2px 3px;
+  border-radius: 3px;
+}
+
+.svg {
+  height: 12px;
+  width: auto;
+  position: relative;
+  vertical-align: middle;
+  top: -2px;
+  fill: black;
+}
+
+.intro {
+  font-size: .8rem;
+}

@@ -1,22 +1,28 @@
-import styles from './document.module.css'
-import es from './es.svg'
-import gb from './gb.svg'
-import us from './us.svg'
+import styles from "./document.module.css";
+import es from "./es.svg";
+import gb from "./gb.svg";
+import us from "./us.svg";
 
 <div className={styles.Document}>
 
 # About Foden Dev
 
 Foden cousins living in different countries coming together to discuss their wins and challenges and all things JS
+
 <ul>
     <li>
-        <img src={gb} />
+        <img src={gb} alt="Great Britain Flag" />
     </li>
     <li>
-        <img src={es} />
+        <img src={es} alt="Spain flag"/>
     </li>
     <li>
-        <img src={us} />
+    <a href="https://www.nef.dev" 
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Nick Foden" >
+        <img src={us} alt="Us flag"/>
+        </a>
     </li>
 </ul>
 </div>
