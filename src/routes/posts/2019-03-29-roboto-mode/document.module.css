@@ -1,0 +1,25 @@
+.Document img {
+  width: 400px;
+}
+
+.image_container a {
+  color: red;
+}
+
+.image_container {
+  display: flex;
+  width: 80vw;
+}
+
+.image_norway {}
+
+.image_container a {
+  justify-content: center;
+  margin: 0 auto;
+}
+/* @media only screen and (max-width: 600px) {
+  .image_container {
+    display: flex;
+    width: 500px;
+  }
+} */
