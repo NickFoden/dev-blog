@@ -14,7 +14,7 @@
   margin: 0 auto;
 }
 
-a {
+.image_container a {
   background-color: white;
   color: black;
   text-decoration: none;
@@ -26,13 +26,13 @@ a {
   display: inline-block;
 }
 
-.span {
+.image_container span {
   display: inline-block;
   padding: 2px 3px;
   border-radius: 3px;
 }
 
-.svg {
+.image_container svg {
   height: 12px;
   width: auto;
   position: relative;
