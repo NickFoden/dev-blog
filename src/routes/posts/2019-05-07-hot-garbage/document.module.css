@@ -1,0 +1,50 @@
+.image_container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.image_norway {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image_container a {
+  margin: 0 auto;
+}
+
+.image_container a {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 4px 6px;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.image_container span {
+  display: inline-block;
+  padding: 2px 3px;
+  border-radius: 3px;
+}
+
+.image_container svg {
+  height: 12px;
+  width: auto;
+  position: relative;
+  vertical-align: middle;
+  top: -2px;
+  fill: black;
+}
+
+.intro {
+  font-size: .8rem;
+}
+
+.Title {
+  font-size: 1.5rem;
+}
