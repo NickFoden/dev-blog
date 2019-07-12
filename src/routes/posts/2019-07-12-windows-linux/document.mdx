@@ -1,0 +1,41 @@
+import styles from "./document.module.css";
+import linuxSubsystem from "./linuxSubsystem.png";
+
+<div >
+
+<span className={styles.title}>
+Running shell and CLI commands in PC terminal ?
+</span>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Had a project where our repo ran some shell commands as part of the start script. Works fine on my mac. Then starting on a pc I was at a loss to why these shell and other commands did nothing. Searched around for information as to why this wouldn't work on pc:
+
+<br />
+<br />
+
+```javascript
+    "start": "sh -ac '. ./.env.${REACT_APP_ENV:-staging}; react-scripts start'",
+```
+
+and after finding many reputable AC contractors in the area...
+
+Stumbled across the ability to turn on the linux subsystem in windows 10.
+
+ <h3>
+    Go to Windows Features and scroll down and toggle linux for subsystem on
+  </h3>
+<br/>
+<img
+    src={linuxSubsystem}
+    alt="Windows Features toggle linux subsystem check box"
+  />
+<br/>
+<br/>
+
+If only I had been tipped off sooner, would have been saved from a frustrating goose chase neatly punctuated by slack pings for updates on the "fast" tweaks I had promised in standup.
+
+<br />
+
+-- <a href="https://nef.dev/tweet" target="_blank" rel="noopener noreferrer" title="Nick on twitter" > Nick</a>
+
+</div>
